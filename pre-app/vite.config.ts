@@ -10,6 +10,6 @@ export default defineConfig({
       
     ],
 
-  base: "/pre-app/",
+  base: "/React-JS-Course/pre-app/",
   
 })
