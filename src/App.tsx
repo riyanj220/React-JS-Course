@@ -1,14 +1,22 @@
 
 import './App.css'
-import { LoginForm } from './components/LoginForm'
-import { Todos } from './components/Todos'
+import { WelcomeMessage } from './components/WelcomeMsg'
 function App() {
  
+  const user : {name:string; type: 'admin' | 'moderator' | 'guest'} = {
+    name: 'riyan',
+    type: 'admin'
+  }
+    
 
   return (
     <>  
-      <Todos/>
-      <LoginForm/>
+      {/* <Todos/> */}
+      {/* <LoginForm/> */}
+      <WelcomeMessage isLoggedIn={true} user={user}
+       />
+
+
     </>
   )
 }
