@@ -1,17 +1,15 @@
 
 import './App.css'
-import Button from './components/Button'
+import Cart from './components/Cart'
+import Counter from './components/Counter'
 function App() {
  
 
   return (
-    <>
-      <h1 className='mb-4'>Hi There !</h1>
-      <p>Riyan Jamil</p>
-      <Button></Button>
-      <Button text='kuch b '></Button>
-      <Button text='kuch b '></Button>
-      <Button text='kuch b '></Button>
+    <>  
+      <Counter/>
+      <Cart/>
+
     </>
   )
 }
