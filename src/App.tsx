@@ -1,15 +1,12 @@
 
 import './App.css'
-import Cart from './components/Cart'
-import Counter from './components/Counter'
+import { LoginForm } from './components/LoginForm'
 function App() {
  
 
   return (
     <>  
-      <Counter/>
-      <Cart/>
-
+      <LoginForm/>
     </>
   )
 }
