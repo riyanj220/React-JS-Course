@@ -1,6 +1,8 @@
 
+import { useState } from 'react'
 import './App.css'
-import { Todos } from './components/Todos'
+import AutoCounter from './components/AutoCounter'
+import PostsPage from './PostsPage'
 function App() {
  
   // const user : {name:string; type: 'admin' | 'moderator' | 'guest'} = {
@@ -8,6 +10,7 @@ function App() {
   //   type: 'admin'
   // }
     
+  const [showCounter , setShowCounter] = useState(false);
 
   return (
     <>  
@@ -16,7 +19,9 @@ function App() {
       {/* <WelcomeMessage isLoggedIn={true} user={user} */}
        {/* /> */}
 
-      <Todos/>
+       {showCounter && <AutoCounter/> }
+       <button onClick={()=> setShowCounter(!showCounter)}>Toggle Counter</button>
+      <PostsPage/>
 
     </>
   )
