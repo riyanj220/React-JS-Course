@@ -1,8 +1,6 @@
 
-import { useState } from 'react'
 import './App.css'
-import AutoCounter from './components/AutoCounter'
-import PostsPage from './PostsPage'
+import { LoginForm2 } from './components/LoginForm2'
 function App() {
  
   // const user : {name:string; type: 'admin' | 'moderator' | 'guest'} = {
@@ -10,7 +8,7 @@ function App() {
   //   type: 'admin'
   // }
     
-  const [showCounter , setShowCounter] = useState(false);
+  // const [showCounter , setShowCounter] = useState(false);
 
   return (
     <>  
@@ -19,9 +17,11 @@ function App() {
       {/* <WelcomeMessage isLoggedIn={true} user={user} */}
        {/* /> */}
 
-       {showCounter && <AutoCounter/> }
+       {/* {showCounter && <AutoCounter/> }
        <button onClick={()=> setShowCounter(!showCounter)}>Toggle Counter</button>
-      <PostsPage/>
+      <PostsPage/> */}
+
+      <LoginForm2/>
 
     </>
   )
