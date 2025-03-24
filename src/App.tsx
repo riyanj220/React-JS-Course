@@ -1,6 +1,9 @@
 
+import { useEffect, useState } from 'react';
 import './App.css'
-import { Practice } from './components/Practice'
+import {UseEffectLesson } from './components/UseEffectLesson'
+import { getTodos } from './api/todos/todos-api';
+import { Todo } from './Types.';
 function App() {
  
   // const user : {name:string; type: 'admin' | 'moderator' | 'guest'} = {
@@ -10,18 +13,52 @@ function App() {
     
   // const [showCounter , setShowCounter] = useState(false);
 
+
+  // USe Effect lesson
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [finishedCount, setFinishedCount] = useState(0);
+
+
+  useEffect(() => { 
+      console.log('App mounted');
+      getTodos().then((todosFromServer) => {
+          console.log({todosFromServer});
+          setTodos(todosFromServer);
+
+          setTimeout(() => {
+
+            setTodos((todoArray) => {
+              return todoArray.map((item , index) => {
+                if(index === 0) {
+                  return {
+                    ...item,
+                    completed: true
+                  }
+                }
+                return item;
+              });
+            });
+
+          },2000);
+      })
+  },[]);
+
+
+  useEffect(() => {
+    const count = todos.filter(todo => todo.completed).length;
+    setFinishedCount(count); 
+    },[todos])
+
+
   return (
     <>  
-      {/* <Todos/> */}
-      {/* <LoginForm/> */}
-      {/* <WelcomeMessage isLoggedIn={true} user={user} */}
-       {/* /> */}
 
-       {/* {showCounter && <AutoCounter/> }
-       <button onClick={()=> setShowCounter(!showCounter)}>Toggle Counter</button>
-      <PostsPage/> */}
+      <p className='text-2xl'>
+        Finished Todos  = <span> {finishedCount}</span>
+      </p>
+      {/* <Practice/> */}
+      <UseEffectLesson todoArray={todos}/>
 
-      <Practice/>
     </>
   )
 }
