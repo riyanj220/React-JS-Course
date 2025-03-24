@@ -13,7 +13,7 @@ const StickyNote: FC<StickyNoteItemProps> = ({note}) => {
   return (
     <div className="min-w-[200px]">
       <div className="relative max-w-sm border border-gray-300 rounded-lg">
-        {note.starred && (
+        {note.completed && (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -29,7 +29,7 @@ const StickyNote: FC<StickyNoteItemProps> = ({note}) => {
         )}
         <div className="p-4">
           <p className="text-sm text-gray-500">Note</p>
-          <h5 className="text-xl font-semibold">{note.text}</h5>
+          <h5 className="text-xl font-semibold">{note.title}</h5>
         </div>
         <div className="flex justify-end p-4 gap-4">
           <button className="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600 transition duration-300" onClick={() => {
