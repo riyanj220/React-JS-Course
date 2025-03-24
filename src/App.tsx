@@ -1,6 +1,6 @@
 
 import './App.css'
-import { LoginForm2 } from './components/LoginForm2'
+import { Practice } from './components/Practice'
 function App() {
  
   // const user : {name:string; type: 'admin' | 'moderator' | 'guest'} = {
@@ -21,8 +21,7 @@ function App() {
        <button onClick={()=> setShowCounter(!showCounter)}>Toggle Counter</button>
       <PostsPage/> */}
 
-      <LoginForm2/>
-
+      <Practice/>
     </>
   )
 }

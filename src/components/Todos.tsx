@@ -11,6 +11,11 @@ export const Todos = () => {
 
     const [newTodo , setNewTodo] = useState('');
 
+    const[person , setPerson] = useState({
+        name: "Riyan",
+        designation: "Software Engineer"
+    });
+    
     const addItems = ()=>{
         if(newTodo.trim()!== ""){
             setTodos([
@@ -38,8 +43,17 @@ export const Todos = () => {
                     onChange={(e) =>{
                         setNewTodo(e.target.value)
                     }}
-                    className="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 mb-4 border   border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
+
+                <button onClick={()=> {
+                    setPerson({
+                        ...person,
+                        name: "Riyan Updated"
+                    })
+                }}>Update Name</button>
+
+                {JSON.stringify(person)}
 
                 <button className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200" onClick={addItems}>Add Task</button>
                 
