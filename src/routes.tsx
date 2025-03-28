@@ -1,9 +1,9 @@
 import { createBrowserRouter} from "react-router-dom";
-import { ContactsPage } from "./pages/ContactsPage";
+import { contactsLoader, ContactsPage } from "./pages/ContactsPage";
 import NotFoundPage from "./pages/NotFound";
 import { RootLayout } from "./pages/Root";
 import { HomePage } from "./pages/HomePage";
-import { ContactDetailPage } from "./pages/ContactDetail";
+import { ContactDetailPage, contactDetailsLoader } from "./pages/ContactDetail";
 
 
 export const appRouter = createBrowserRouter([
@@ -19,12 +19,14 @@ export const appRouter = createBrowserRouter([
 
             {
                 path: '/React-JS-Course/contacts',
-                element: <ContactsPage />
+                element: <ContactsPage/>,
+                loader:contactsLoader
             },
             
             {
                 path: '/React-JS-Course/contacts/:contactId',
-                element: <ContactDetailPage />
+                element: <ContactDetailPage />,
+                loader: contactDetailsLoader
             },
         ]
     },
