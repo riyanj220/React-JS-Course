@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [
       tailwindcss(),
       react(),
-      
     ],
 
   base: "/React-JS-Course/",
